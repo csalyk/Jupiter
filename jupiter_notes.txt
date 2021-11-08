@@ -1,0 +1,18 @@
+58 .tpt files
+;Each tpt file has the columns line(left image), sample (left image), line (right), sample (right), correlation coefficient of match
+;readcol, tpfilelist[i], linel, sampl, liner, sampr, corr
+
+
+;Diffs.txt contains longitude and time differences between image pairs. Code that reads it in
+readcol, 'diffs.txt', imagenumber, longdiff, something, timediff, /silent                             
+
+
+;Code takes difference between right image and left image x and y values
+;then converts to latitude and longitude differences
+xlengths = samprall - samplall  ;x-difference between left and right images                                                                                
+ylengths = linerall - linelall  ;y-difference between left and right images
+scale = 0.1 ; degrees/pix       ;scale of images                                                                                
+latall = -linelall*scale+90.1                                                                                     
+deltalong=(xlengths/10.-longdiffall)*!pi/180.     
+          ;longdiffall is an array of longitude differences between images                                                             
+deltalat=-ylengths/10.*!pi/180. ;****negative sign appears because N is down****                                
