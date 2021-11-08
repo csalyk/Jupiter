@@ -1,0 +1,6 @@
+deltay_list=dblarr(n_elements(filelist))
+
+for i=0, n_elements(filelist)-1 do begin $
+makeZonalProfile, filelist[0], deltay=deltay & $
+deltay_list[i]=deltay & $
+endfor

@@ -1,0 +1,39 @@
+rune specs:
+
+correlate:
+quality=0.8
+box size=31x31 pixels
+gridsize=10 pixels
+check=2
+
+removeOutliers:
+xtol=0.25
+ydiff=4
+nbr=8
+
+files:
+okFiles/okout*e.tpt
+
+total number of vectors before removeOutliers:
+202945
+(total number of vectors for check=0 is 275508, so about 26% of vectors
+were eliminated by check parameter)
+
+total number of vectors after removeOutliers before by-eye removal:
+201023
+total number of vectors after removeOutliers after by-eye removal:
+201013
+
+correlation coefficient:
+0.825098
+
+number of vectors for which u'v' > 4 sigma:
+2264
+number of false matches:
+10
+
+binned correlation coefficient:
+0.793427
+
+no ovals correlation coefficient:
+0.838555
